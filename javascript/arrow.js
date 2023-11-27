@@ -15,8 +15,8 @@ const message = function (msg){
     return "msg : " + msg;
 }
 
-/*f
-unction hello(msg){
+/*
+function hello(msg){
     return "msg, Hello : " + msg;
 }
 
