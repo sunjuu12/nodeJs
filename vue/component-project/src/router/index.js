@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DataBinding from '../views/DataBinding.vue'
+import ListBinding from '../views/ListBinding.vue'
+import IFBinding from '../views/IFBinding.vue'
+import OnEvent from '../views/OnEvent.vue'
+import Options from '../views/Options.vue'
 
 const routes = [
   {
@@ -21,6 +25,26 @@ const routes = [
     path: '/dataBinding',
     name: 'data',
     component: DataBinding
+  },
+  {
+    path: '/ListBinding',
+    name : 'listBinding',
+    component : ListBinding
+  },
+  {
+    path: '/IFBinding',
+    name : 'ifBinding',
+    component : IFBinding
+  },
+  {
+    path: '/OnEvent',
+    name : 'onEvent',
+    component : OnEvent
+  },
+  {
+    path: '/Options',
+    name : 'options',
+    component : Options
   }
 ]
 

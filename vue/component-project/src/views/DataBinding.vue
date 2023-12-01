@@ -20,11 +20,21 @@
         <input type="checkbox" v-model="chData" true-value="여" false-value="부">
         <p>{{ chData }}</p>
         <div>
-            <lavel><input type="checkbox" value="서울" v-model="city">서울</lavel>
-            <lavel><input type="checkbox" value="대구" v-model="city">대구</lavel>
-            <lavel><input type="checkbox" value="부산" v-model="city">부산</lavel>
+            <input type="checkbox" value="서울" v-model="city">서울
+            <input type="checkbox" value="대구" v-model="city">대구
+            <input type="checkbox" value="부산" v-model="city">부산
             <p>{{ city }}</p>
         </div>
+        <div>
+            <input type="radio" value="독서" v-model="hobby">독서
+            <input type="radio" value="영화" v-model="hobby">영화
+            <input type="radio" value="운동" v-model="hobby">운동
+            <p>{{ hobby }}</p>
+        </div>
+        <hr>
+        <img v-bind:style="styleData" v-bind:src="imgUrl">
+        <div class ="container" v-bind:class="{'active' : isActive, 'text-red' : hasError}">Class Binding First</div>
+        <div v-bind:class="myClass">Class Binding Second</div>                                       
     </div> 
 </template>
 <script>
@@ -38,8 +48,37 @@ export default {
             selectModel : 'winter',
             textModel : '백견불여일타',
             chData : '',
-            city : ''
+            city : [],
+            hobby : '운동',
+            imgUrl : 'https://kr.vuejs.org/images/logo.png',
+            styleData : {
+                backgroundColor : 'black',
+                width : '200px'
+            },
+            backSetting : 'background-color:skyblue; width:200px',
+            addStyle : 'height: 200px;',
+            isActive : false,
+            //hasError : !this.isActive
+            myClass : 'active'
         }
-    }  
+    },
+    computed : {
+        hasError() {
+            return !this.isActive;
+        }
+    }
 }
 </script> 
+<style scoped>
+    container {
+        width : 100%;
+        height : 200px;
+    }
+    .active {
+        background-color: aquamarine;
+        font-weight: bold;
+    }
+    .text-red {
+        color: red;
+    }
+</style>
