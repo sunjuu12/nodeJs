@@ -1,5 +1,6 @@
 // store.js
 import {createStore} from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 const store = createStore({
     state() {
@@ -27,11 +28,18 @@ const store = createStore({
             state.cart.push(info);
         }
     },
-    // actions : { // 비동기
-    //     addProduct(state, info) {
-
-    //     }
-    // }
+    actions : { // 비동기
+        addProduct(context, info) { // context에는 인스턴스가 넘어옴
+            setTimeout(() => {
+                context.commit('addProduct', info)
+            }, 1000)
+        }
+    },
+    plugins : [
+        createPersistedState({// 호출하는 형태, 저장소의 정보를 저장할 때 사용.
+            paths : ['cart'] // 객체로 넘기는 변수명, 여기에 정의된 값만 유지가 됨.
+        }) 
+    ]
 });
 
 export default store;

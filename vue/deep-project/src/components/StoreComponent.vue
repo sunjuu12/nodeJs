@@ -70,7 +70,8 @@ export default {
                 product_name : this.productInfo.product_name,
                 category : this.productInfo.category
             }
-            this.$store.commit('addProduct', obj);
+            //this.$store.commit('addProduct', obj); // mutations 
+            this.$store.dispatch('addProduct', obj); // action
             // this.$store.commit('addProduct', this.productInfo); // 내부 값 계속 연결 됨. 참조 타입은 오브젝트가 아닌 오브젝트 메모리 주소를 가지고 있음. 객체의 주소를 알려줌
         }
     }
