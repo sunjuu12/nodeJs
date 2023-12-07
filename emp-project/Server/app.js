@@ -11,6 +11,11 @@ app.listen(3000, () => {
     console.log('Server Start, http://localhost:3000')
 });
 
+app.get('/depts', async(req, res) => {
+    let list = await mysql.query('dept', 'list');
+    res.send(list);
+})
+
 // 전체 조회 
 // 파일을 읽어들이거나 외부와 통신, DB 통신은 비동기
 // 내부에 가지고 있는 것은 동기

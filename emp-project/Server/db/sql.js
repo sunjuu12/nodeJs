@@ -38,7 +38,7 @@ let emp = {
     update : `UPDATE employees SET ? WHERE emp_no = ?`
 }
 let dept = {
-    list : `SELETE dept_no, dept_name FROM departments ORDER BY dept_no`
+    list : `SELECT dept_no, dept_name FROM departments ORDER BY dept_no`
     
 }
 let sal = {
