@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .blue {
+        color: skyblue;
+      }
+
+      .red {
+        columns: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Where do you want to go?</h1>
+      <h2>Travel Destinations</h2>
+      <p>Plan your next adventure.</p>
+      <ul id="destinations">
+        <li>Rome</li>
+        <li>Paris</li>
+        <li class="blue">Rio</li>
+      </ul>
+    </div>
+    <script>
+      // selector : 탐색
+      // # : id 속성
+      console.log($("#destinations"));
+
+      // . : class 속성
+      console.log($(".blue"));
+
+      // tagName
+      console.log($("h1"));
+
+      // [attribute] : 일반 속성
+      console.log($("[name]"));
+
+      // 관계를 기반 공백은 하위 요소, > 사용할 시, 자식 요소
+      console.log($("ul > li"));
+
+      /*
+        innerHtml: html()
+        textContent: text()
+        class: addClass(), removeClass(), hasClass()원하는 class값이 있는지, toggleClass()원하는 값을 가지고 있으면 삭제 없으면 추가
+        value: val()
+        style: css()
+        기타: prop(), attr() 속성을 다룬다는 점은 같음. prop(dom이 가진 노드가 프로퍼티를 가지고 있는데 이것이 prop)가 되는 것도 attr(html 속성)이 되는 것도 있지만
+              버전 3부터 두 가지 기능 분리. prop가 돔을 제어하기에 이게 먼저.
+      */
+
+      let result = $("ul").html();
+      console.log("html", result);
+      result = $("ul").text();
+      console.log("text", result);
+      $("h1").text("Hello, jquery!");
+      $("h2").css("background-color", "green");
+      result = $("h2").css("color");
+      console.log("css", result);
+      $("p").attr("name", "dumi");
+    </script>
+  </body>
+</html>
